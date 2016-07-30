@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+	<script type="text/javascript">
+		function confirmRevoke(rev)
+		{
+			if (rev.checked)
+				{
+					resp = confirm('Are you sure you want to revoke your reservation?');
+					if(!resp)
+						rev.checked = false;
+				}
+		}		
+	</script>
+	<div id = 'wrapper'>
+	<p id = 'detail_expiry' style = 'font-size: 17px'>Current Reservation Ends On:  <i>{{ date }}</i></p>
+	<form action = "" method = 'post'>
+		{{ form.csrf_token }}
+		<p style = 'font-size: 17px'>
+			Number of Days:	{{ form.days(placeholder = 'To Extend Reservation By') }}<br>
+		</p>
+		<p>
+			{{ form.revoke_reservation(onclick = 'confirmRevoke(this);', style = 'margin-left: 70px') }} Revoke Reservation<br>
+		</p>
+		<input style = 'margin-left: 100px' type = 'submit' value = 'Edit Reservation'>	
+	</form>
+	</div>
+{% endblock %}

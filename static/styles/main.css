@@ -1,0 +1,238 @@
+@import url('http://fonts.googleapis.com/css?family=Ubuntu');
+
+body
+{
+	margin: 0;
+	padding: 0;
+	font-family: Monospace;
+	font-size: 15px;
+}
+
+a
+{
+	text-decoration: None;
+}
+
+a:visited
+{
+	text-decoration: None;
+}
+
+#header
+{
+	height:65px;
+	font-family: Ubuntu;
+	font-size:28px;
+	margin-top:35px;
+	margin-bottom: -28px;
+	margin-left: 15px;
+	display: block;
+	color: #2F4F4F;
+
+}
+
+#top_bar
+{
+	height: 43px;
+	background-color: #5f5f5f;
+	font-size: 19px;
+	font-family: Monospace;
+	margin-top: 0px;
+	display: block;
+	position: relative;
+	top: -10px;
+
+}
+
+#top_bar_list
+{
+	list-style-type: None;
+	position: relative;	
+	display: block;
+	left: -37px;
+}
+
+#top_bar_list > li
+{
+	float: left;
+}
+
+
+#top_link
+{
+	display: inline-block;
+	position: relative;
+	color: white;
+	top: 0px;
+	padding: 10px 20px 10px 20px;
+}
+
+#top_link:hover
+{
+	background-color: black;
+
+}
+
+#top_link:visited
+{
+	text-decoration: None;
+}
+
+#flashed_message_list
+{
+	margin-left: -30px;
+	list-style-type: none;
+	
+}
+
+#flashed_message_list > li
+{
+	background-color: #ADD8E6;
+	display: inline;
+	height: 20px;
+	width: 50px;
+	padding: 5px 5px 5px 5px;
+	font-size: 16px;
+
+}
+
+#wrapper
+{
+	margin-left: 13px;
+	margin-top:20px;
+}
+
+#heading
+{
+	font-size: 20px;
+
+}
+
+
+
+//Asset list
+
+#asset_list 
+{
+  width: 200px;
+}
+
+#asset_listh
+{
+  font: 100 20px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: inline;
+  border-bottom: 2px solid black;
+}
+
+#asset_listul 
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#asset_listli 
+{
+  font: 100 18px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px;
+}
+
+li:last-child 
+{
+  border: none;
+}
+
+#asset_lista
+{
+  text-decoration: none;
+  color: Black;
+  display: inline-block;
+  padding: 2px 5px 2px 5px;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+#asset_lista:hover 
+{
+  font-size: 20px;
+  background: #B0C4DE;
+}
+
+//forms
+
+#field
+{
+	margin-left: 100px;
+	background-color: black;
+}
+
+#error
+{
+	color: red;
+	position: relative;
+	top: 10px;
+	left: 141px; 
+}
+
+#error_login
+{
+	color: red;
+	position: relative;
+	left: 82px; 
+	top: 5px;
+}
+
+#error_register
+{
+	color: red;
+	position: relative;
+	left: 158px; 
+	top: 9px;
+}
+
+#detail_heading
+{
+	position: relative;
+	top: -10px;
+	font-size: ;
+}
+
+#detail
+{
+	position: relative;
+	top: -10px;
+	font-family: Arial;
+	font-size: 18px;
+}
+
+#detail_expiry
+{
+	position: relative;
+	top: 0px;
+	font-family: Arial;
+	font-size: 17px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

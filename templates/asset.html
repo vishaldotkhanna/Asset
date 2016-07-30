@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id = 'wrapper'>
+<table>
+	<tr valign="top">
+		<td>
+			<h1 id = 'detail_heading'>{{ asset[1] }}</h1>
+			{% if asset[4] == 1 %}
+				<p id = 'detail'>
+					Current Status: Reserved				
+				</p>
+				<p id = 'detail'>
+					Owner: {{ owner }}
+				</p>
+				<p id = 'detail'>
+					Release Date: {{ asset[2] }}
+				</p>
+			{% else %}
+				<p id = 'detail'>
+					Current Status: Unreserved
+				</p>
+			{% endif %}
+		</td>
+	</tr>
+</table>
+</div>
+{% endblock %}

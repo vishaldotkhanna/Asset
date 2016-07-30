@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<script type="text/javascript">
+	function showDays(reserve)
+	{
+		var days = document.getElementById('days');
+		if(reserve.checked)
+			days.style['display'] = 'block';
+		else
+			days.style['display'] = 'None';
+	}
+</script>
+<div id = 'wrapper'>
+<h2>Create New Asset</h2>
+<form action = "" method = 'post' name = 'addasset'>
+	{{ form.hidden_tag() }}
+	<p>
+		Asset Name: 
+		<span style = 'left: 155px; position: absolute;'>{{ form.assetname }}</span><br>
+		{% for error in form.assetname.errors %}
+			<span id = 'error'>{{ error }} </span>
+		{% endfor %}
+	</p>
+	<p>
+		{{ form.reserve_it(onclick = 'showDays(this);') }} Reserve This Asset
+	</p>
+	<p id = "days" style = 'display: none;'>
+		Number of Days:
+		<span style = 'left: 155px; position: absolute;'>{{ form.days }}</span><br>
+		{% for error in form.days.errors %}
+			<span id = 'error'>{{ error }} </span>
+		{% endfor %}		
+	</p>
+	<p><input style = 'margin-left: 100px;' type="submit" name="Create Asset"></p>
+</form>
+</div>
+
+{% endblock %}

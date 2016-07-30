@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name = 'viewport' content = 'width = device-width, initial-scale = 1' />
+	<link rel = 'stylesheet' href = "{{ url_for('static', filename = 'styles/main.css') }}" />
+	<link rel = stylesheet' href = "http://fonts.googleapis.com/css?family=Ubuntu">
+	<style type="text/css">
+		input
+		{
+			padding: 2px 4px 2px 4px;
+		}
+		input[type = text], input[type = password]
+		{
+			background-color: #F0F8FF;
+		}
+		input[type = submit]
+		{
+			margin-left: 70px;
+		}
+		input[type = checkbox]
+		{
+			margin-left: 50px;
+		}
+
+	</style>
+	<title>
+		{% if title %}
+			{{ title }}
+		{% else %}
+			 Welcome to Asset Reservation!
+		{% endif %}
+	</title>
+</head>
+<body>
+	<div id = 'header'>
+		<b>Asset Reservation and <span style = 'color: #808000;'>Management</span></b>
+	</div>
+	<div id = 'top_bar'>
+	<ul id = 'top_bar_list'>
+		{% if g.user is not none and g.user.is_authenticated %}
+			<li><a id = 'top_link' href="{{ url_for('index') }}">HOME</a></li>
+
+			 <li><a id = 'top_link' href="{{ url_for('add_asset') }}">ADD ASSET</a></li>
+
+			 <li><a id = 'top_link' href="{{ url_for('manage') }}">MANAGE ASSETS</a></li>
+
+			 <li><a id = 'top_link' href="{{ url_for('logout') }}">LOGOUT</a></li>
+		{% else %}
+			 <li><a id = 'top_link' href="{{ url_for('login') }}">LOGIN</a></li>
+
+			 <li><a id = 'top_link' href="{{ url_for('register') }}">REGISTER</a></li>
+		{% endif %}
+	</ul>
+	</div>
+
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<ul id = 'flashed_message_list'>
+					<li>{{ message }}</li>
+				</ul>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+
+	{% block content %}
+	{% endblock %}
+</body>

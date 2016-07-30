@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id = 'wrapper'>	
+	<div>
+		{% if assets %}
+		<div id = 'asset_list'>
+		<h2 id = 'asset_listh'>Your asset(s):</h2>
+		<ul id = 'asset_listul'>
+			{% for asset in assets %}
+				<li id = 'asset_listli' >
+				<a id = 'asset_lista' href="{{ url_for('asset', asset_name = asset[1]) }}">{{ asset[1] }}</a>
+				</li>
+							
+			{% endfor %}
+		</ul>
+		</div>
+		{% else %}
+			<p>You have no assets at this time.</p>
+		{% endif %}
+	</div>
+</div>
+
+{% endblock %}

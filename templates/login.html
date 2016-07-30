@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id = 'wrapper'>
+	<h2>Sign In</h2>
+	<form action = "" method = "post" name = 'login'>
+		{{ form.hidden_tag() }}
+		<p>
+			Username:
+			{{ form.username(class_ = 'form_field', placeholder = 'Enter Your Username') }}<br>
+			{% for error in form.username.errors %}
+				<span id = 'error_login'>{{ error }} </span>
+			{% endfor %}
+		</p>
+		<p>
+			Password: 
+			{{ form.password(placeholder = 'Enter Your Password') }}<br>
+			{% for error in form.password.errors %}
+				<span id = 'error_login'>{{ error }} </span>
+			{% endfor %}
+		</p>
+		<p>{{ form.remember_me }} Remember Me</p>
+		<p><input class = 'form_field' type = "submit" value = "Sign In"></p>
+	</form>
+
+	<p>Don't have an account? <a href="{{ url_for('register') }}">Create an Account</a></p>
+</div>
+{% endblock %}

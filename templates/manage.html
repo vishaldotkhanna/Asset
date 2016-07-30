@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id = 'wrapper'>	
+	<h2 id = 'asset_listh'>Your Asset(s):</h2>
+	{% if users_assets %}
+	<div id = 'asset_list'>
+	<ul id = 'asset_listul'>
+		{% for asset in users_assets %}
+			<li id = 'asset_listli'>
+			<a id = 'asset_lista' href = "{{ url_for('asset', asset_name = asset[1]) }}">{{ asset[1] }}</a> <a id = 'asset_lista' href = "{{ url_for('edit_reservation', asset_name = asset[1]) }}"><i>Edit Reservation</i></a>
+			</li>
+		{% endfor %}
+	</ul>
+	</div>
+	{% else %}
+		<p>You don't have any assets right now.</p>
+	{% endif %}<br><br>
+
+	<h2 id = 'asset_listh'>Reserved Asset(s):</h2>
+	{% if others_assets %}
+	<div id = 'asset_list'>
+	<ul id = 'asset_listul'>
+		{% for asset in others_assets %}
+		<li id = 'asset_listli'>
+			<a id = 'asset_lista' href = "{{ url_for('asset', asset_name = asset[1]) }}">{{ asset[1] }}</a>
+		</li>
+		{% endfor %}		
+	</ul>
+	</div>
+	{% else %}
+		<p>There are no assets reserved by other users at this time.</p>
+	{% endif %}<br><br>
+
+	<h2 id = 'asset_listh'>Free Asset(s):</h2>
+	{% if free_assets %}
+	<div id = 'asset_list'>
+	<ul id = 'asset_listul'>
+		{% for asset in free_assets %}
+		<li id = 'asset_listli'>
+			<a id = 'asset_lista' href = "{{ url_for('asset', asset_name = asset[1]) }}">{{ asset[1] }}</a> <a id = 'asset_lista' href = "{{ url_for('make_reservation', asset_name =  asset[1]) }}"><i>Make Reservation</i></a>
+		</li>
+		{% endfor %}
+	</ul>
+	</div>
+	{% else %}
+		<p>There are no free assets at this time.</p>
+	{% endif %}
+</div>	
+
+{% endblock %}
